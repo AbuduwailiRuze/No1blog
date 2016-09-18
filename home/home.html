@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>主页</title>
+		<link rel="stylesheet" href="../css/reset.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+
+		<style type="text/css">
+			/*图片&标题*/
+			/*图片轮播*/
+			
+			#img-disply {
+				width: 100%;
+				margin: 10px auto;
+			}
+			
+			.flexslider {
+				margin: 0px auto 20px;
+				position: relative;
+				width: 100%;
+				height: 482px;
+				overflow: hidden;
+				zoom: 1;
+			}
+			
+			.flexslider .slides li {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.flex-direction-nav a {
+				width: 70px;
+				height: 70px;
+				line-height: 99em;
+				overflow: hidden;
+				margin: -35px 0 0;
+				display: block;
+				background: url(../img/images/ad_ctr.png) no-repeat;
+				position: absolute;
+				top: 50%;
+				z-index: 10;
+				cursor: pointer;
+				opacity: 0;
+				filter: alpha(opacity=0);
+				-webkit-transition: all .3s ease;
+				border-radius: 35px;
+			}
+			
+			.flex-direction-nav .flex-next {
+				background-position: 0 -70px;
+				right: 0;
+			}
+			
+			.flex-direction-nav .flex-prev {
+				left: 0;
+			}
+			
+			.flexslider:hover .flex-next {
+				opacity: 0.8;
+				filter: alpha(opacity=25);
+			}
+			
+			.flexslider:hover .flex-prev {
+				opacity: 0.8;
+				filter: alpha(opacity=25);
+			}
+			
+			.flexslider:hover .flex-next:hover,
+			.flexslider:hover .flex-prev:hover {
+				opacity: 1;
+				filter: alpha(opacity=50);
+			}
+			
+			.flex-control-nav {
+				width: 100%;
+				position: absolute;
+				bottom: 10px;
+				text-align: center;
+			}
+			
+			.flex-control-nav li {
+				margin: 0 2px;
+				display: inline-block;
+				zoom: 1;
+				*display: inline;
+			}
+			
+			.flex-control-paging li a {
+				background: url(../img/images/dot.png) no-repeat 0 -16px;
+				display: block;
+				height: 16px;
+				overflow: hidden;
+				text-indent: -99em;
+				width: 16px;
+				cursor: pointer;
+			}
+			
+			.flex-control-paging li a.flex-active,
+			.flex-control-paging li.active a {
+				background-position: 0 0;
+			}
+			
+			.flexslider .slides a img {
+				width: 100%;
+				height: 482px;
+				display: block;
+			}
+			/**
+			 * 主体部分
+			 */
+			
+			#main {
+				width: 1180px;
+				margin: auto;
+			}
+			
+			#main .left {
+				width: 900px;
+				float: left;
+			}
+			
+			#main .left .left-wrap {
+				width: 860px;
+			}
+			
+			#main .left .switch {
+				height: 40px;
+				width: 100%;
+				line-height: 40px;
+				padding-top: 32px;
+				border-bottom: 1px solid #b7bbbf;
+			}
+			
+			#main .left .switch ul li {
+				float: left;
+				padding-right: 24px;
+			}
+			
+			#main .left .switch ul li a {
+				display: inline-block;
+				font-family: "calisto mt";
+				font-size: 20px;
+				line-height: 40px;
+				height: 40px;
+				position: relative;
+				top: -1px;
+			}
+			
+			#main .left .switch ul li a:hover {
+				border-bottom: 2px solid #f01400;
+			}
+			
+			#main .left .switch ul li a.cur {
+				border-bottom: 2px solid #f01400;
+			}
+			
+			#main .left .news-list {
+				width: 100%;
+				padding-top: 20px;
+			}
+			
+			#main .left .news-list ul li {
+				width: 100%;
+				padding: 0px;
+				overflow: hidden;
+				padding-bottom: 50px;
+				padding-top: 32px;
+				border-bottom: 1px solid #d9dde1;
+			}
+			
+			#main .left .news-list ul li .title-span {
+				font-size: 20px;
+				font-family: "calisto mt";
+			}
+			
+			#main .left .news-list ul li p {
+				font-size: 14px;
+				font-family: "calisto mt";
+				padding-top: 10px;
+				text-align: justify;
+			}
+			
+			.left .news-list ul li .more-span {
+				display: block;
+				width: 100%;
+				padding-top: 10px;
+				height: 30px;
+				position: relative;
+			}
+			
+			.left .news-list ul li .more-span a {
+				position: absolute;
+				right: 35px;
+			}
+			
+			.left .news-list ul li .more-span i {
+				display: inline-block;
+				font-size: 20px;
+				font-weight: 500;
+				color: #ff5a00;
+				font-style: normal;
+				position: absolute;
+				right: 10px;
+				height: 30px;
+			}
+			
+			#main .right {
+				width: 280px;
+				float: left;
+				background: #f1f1f2;
+				margin-top: 24px;
+			}
+			
+			.right .right-wrap {
+				width: 250px;
+				margin: 0 auto;
+			}
+			
+			.right .cate-title {
+				width: 100%;
+				height: 45px;
+				border-bottom: 1px solid #B7BBBF;
+				position: relative;
+			}
+			
+			.right .cate-title h4 {
+				font-family: "微软雅黑";
+				font-size: 20px;
+				line-height: 45px;
+			}
+			
+			.right .cate-title .red-line {
+				position: absolute;
+				width: 30px;
+				height: 2px;
+				background: #CC0000;
+				top: 44px;
+				left: 15px;
+			}
+			
+			.right .cate-cotent {
+				width: 100%;
+				height: auto;
+			}
+			
+			.right .cate-cotent ul li {
+				height: 60px;
+				line-height: 60px;
+				border-bottom: 1px dashed #B7BBBF;
+			}
+			
+			.right .cate-cotent ul li a {
+				position: relative;
+				display: inline-block;
+				width: 120px;
+				height: 60px;
+				color: #000000;
+			}
+			
+			.right .cate-cotent ul li a:hover {
+				color: #FF6600;
+			}
+			
+			.right .cate-cotent ul li i {
+				position: absolute;
+				display: inline-block;
+				width: 32px;
+				height: 32px;
+				top: 11px;
+				text-align: center;
+			}
+			
+			.right .cate-cotent li i img {
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+				top: 0px;
+			}
+			/*FF6600*/
+			
+			.right .cate-cotent ul li span {
+				position: absolute;
+				display: inline-block;
+				height: 32px;
+				font-family: "微软雅黑";
+				font-size: 12px;
+				left: 40px;
+			}
+			
+			#pagenation {
+				width: 100%;
+				margin-top: 25px;
+				margin-bottom: 35px;
+			}
+			
+			.page span,
+			.page-disabled {
+				color: #c8cdd2;
+				display: inline-block;
+				font-size: 14px;
+				height: 39px;
+				line-height: 39px;
+				min-width: 20px;
+				padding: 0 5px;
+				text-align: center;
+			}
+			
+			.page a.active {
+				background: #ec1500 none repeat scroll 0 0;
+				border-color: transparent;
+				color: #ffffff;
+			}
+			
+			.page a {
+				border-bottom: 1px solid transparent;
+				color: #787d82;
+				display: inline-block;
+				font-size: 14px;
+				height: 29px;
+				line-height: 30px;
+				margin: 0 5px;
+				min-width: 20px;
+				padding: 0 5px;
+				text-align: center;
+				transition: border-color 0.2s ease 0s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--
+        	作者：407071905@qq.com
+        	时间：2016-08-29
+        	描述：头部开始
+        -->
+		<div class="w">
+			<div class="w-wrap">
+				<div id="header">
+					<div class="nav">
+						<div class="img-logo">
+							<img src="../img/LOGO.png" />
+						</div>
+						<!--
+                    	作者：407071905@qq.com
+                    	时间：2016-08-30
+                    	描述：
+                    	HOME  |  ABOUT US  |  PROGRAMS  |  COLLABORATION  |  ACTIVITY & EVENT  |  DOWNLOAD  |  CONTACT US
+                    -->
+						<div class="nav-bar">
+							<div class="nav-wrap">
+								<ul>
+									<li>
+										<a href="index.html">HOME</a><span></span>|</li>
+									<li>
+										<a href="#">ABOUT US</a><span></span>|</li>
+									<li>
+										<a href="#">PROGRAMS</a><span></span>|</li>
+									<li>
+										<a href="#">COLLABORATION</a><span></span>|</li>
+									<li>
+										<a href="list.html">ACTIVITY & EVENT</a><span></span>|</li>
+									<li>
+										<a href="download.html">DOWNLOAD</a><span></span>|</li>
+									<li>
+										<a href="contactus.html">CONTACT US</a><span></span></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--
+					作者：407071905@qq.com
+					时间：2016-09-16
+					描述：图片轮播
+				-->
+				<div id="img-disply">
+					<div id="banner_tabs" class="flexslider">
+						<ul class="slides">
+							<li>
+								<a title="" target="_blank" href="#">
+									<img width="1920" height="482" alt="" style="background: url(../img/images/b-img1.jpg) no-repeat center;" src="../img/images/alpha.png">
+								</a>
+							</li>
+							<li>
+								<a title="" href="#">
+									<img width="1920" height="482" alt="" style="background: url(../img/images/b-img2.jpg) no-repeat center;" src="../img/images/alpha.png">
+								</a>
+							</li>
+							<li>
+								<a title="" href="#">
+									<img width="1920" height="482" alt="" style="background: url(http://placehold.it/1180x500) no-repeat center;" src="../img/images/alpha.png">
+								</a>
+							</li>
+						</ul>
+						<ul class="flex-direction-nav">
+							<li>
+								<a class="flex-prev" href="javascript:;">Previous</a>
+							</li>
+							<li>
+								<a class="flex-next" href="javascript:;">Next</a>
+							</li>
+						</ul>
+						<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+							<li>
+								<a>1</a>
+							</li>
+							<li>
+								<a>2</a>
+							</li>
+							<li>
+								<a>2</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+
+				<!--
+            	作者：407071905@qq.com
+            	时间：2016-08-30
+            	描述：主体部分
+            -->
+				<div id="main">
+					<div class="left">
+						<div class="left-wrap">
+
+							<div class="switch">
+								<ul>
+									<li>
+										<a href="#" class="cur">ACTIVITY</a>
+									</li>
+									<li>
+										<a href="#">EVENT</a>
+									</li>
+								</ul>
+							</div>
+							<div class="news-list">
+								<ul>
+									<li>
+										<div class="item-wrap">
+											<span class="title-span">
+											<a href="news.html">Confucius Institute of Woosuk University Council held in SDNU</a>
+										</span>
+											<p>On January 11,the Confucius Institute Council of South Korea Woosuk University was held in the meeting room at the fifth floor of the International Academic Exchange Center.The vice president Yu Tao attended the meeting and delivered a speech. Piao Hegui,the ..</p>
+											<span class="more-span">
+											<a href="news.html">more</a>
+											<i>></i>
+										</span>
+										</div>
+									</li>
+									<li>
+										<div class="item-wrap">
+											<span class="title-span">
+											<a href="news.html">Confucius Institute of Woosuk University Council held in SDNU</a>
+										</span>
+											<p>On January 11,the Confucius Institute Council of South Korea Woosuk University was held in the meeting room at the fifth floor of the International Academic Exchange Center.The vice president Yu Tao attended the meeting and delivered a speech. Piao Hegui,the ..</p>
+											<span class="more-span">
+											<a href="news.html">more</a>
+											<i>></i>
+										</span>
+										</div>
+									</li>
+									<li>
+										<div class="item-wrap">
+											<span class="title-span">
+											<a href="news.html">Confucius Institute of Woosuk University Council held in SDNU</a>
+										</span>
+											<p>On January 11,the Confucius Institute Council of South Korea Woosuk University was held in the meeting room at the fifth floor of the International Academic Exchange Center.The vice president Yu Tao attended the meeting and delivered a speech. Piao Hegui,the ..</p>
+											<span class="more-span">
+											<a href="news.html">more</a>
+											<i>></i>
+										</span>
+										</div>
+									</li>
+									<li>
+										<div class="item-wrap">
+											<span class="title-span">
+											<a href="news.html">Confucius Institute of Woosuk University Council held in SDNU</a>
+										</span>
+											<p>On January 11,the Confucius Institute Council of South Korea Woosuk University was held in the meeting room at the fifth floor of the International Academic Exchange Center.The vice president Yu Tao attended the meeting and delivered a speech. Piao Hegui,the ..</p>
+											<span class="more-span">
+											<a href="news.html">more</a>
+											<i>></i>
+										</span>
+										</div>
+									</li>
+									<li>
+										<div class="item-wrap">
+											<span class="title-span">
+											<a href="news.html">Confucius Institute of Woosuk University Council held in SDNU</a>
+										</span>
+											<p>On January 11,the Confucius Institute Council of South Korea Woosuk University was held in the meeting room at the fifth floor of the International Academic Exchange Center.The vice president Yu Tao attended the meeting and delivered a speech. Piao Hegui,the ..</p>
+											<span class="more-span">
+											<a href="news.html">more</a>
+											<i>></i>
+										</span>
+										</div>
+									</li>
+
+								</ul>
+							</div>
+							<div id="pagenation" class="pagenation">
+								<div class="page">
+									<span class="disabled_page">HOME</span>
+									<span class="disabled_page">PREV</span>
+									<a class="active" href="javascript:void(0)">1</a>
+									<a href="/article/hot/2">2</a>
+									<a href="/article/hot/3">3</a>
+									<a href="/article/hot/4">4</a>
+									<a href="/article/hot/5">5</a>
+									<a href="/article/hot/6">6</a>
+									<a href="/article/hot/7">7</a>
+									<a href="/article/hot/2">NEXT</a>
+									<a href="/article/hot/248">END</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<div class="cate-title">
+							<div class="red-line"></div>
+							<div class="right-wrap">
+								<h4><a href="#">博文分类</a></h4>
+							</div>
+						</div>
+						<div class="cate-cotent">
+							<div class="right-wrap">
+								<ul>
+									<li>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												手机移动
+												</span>
+										</a>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												分类2
+												</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												手机移动
+												</span>
+										</a>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												分类2
+												</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												手机移动
+												</span>
+										</a>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												分类2
+												</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												手机移动
+												</span>
+										</a>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												分类2
+												</span>
+										</a>
+									</li>
+									<li>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												手机移动
+												</span>
+										</a>
+										<a href="">
+											<i><img src="../img/icon-mobile.png" width="30" height="30"/></i>
+											<span>
+												分类2
+												</span>
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<div class="visit-link">
+					<span>VISIT :</span>
+					<a href="#">Shandong Normal University</a>|
+					<a href="#">International Office</a>|
+					<a href="#">School of International Exchange</a>
+				</div>
+				<div class="end-info">
+					<div class="logo x">
+						<img src="../img/logo-png.png" />
+					</div>
+					<div class="copy-right x">
+						<p>
+							International OfficeInternational OfficeInternational Office<br/>International OfficeInternational OfficeInternational Office
+						</p>
+					</div>
+					<div class="contact x">
+						<p>
+							QQ:407071905 <br /> 407071905@QQ.COM
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../js/jquery-1.7.1.min.js"></script>
+		<script src="../js/slider.js" type="text/javascript"></script>
+		<script>
+			$(function() {
+				//图片轮播
+				var bannerSlider = new Slider($('#banner_tabs'), {
+					time: 5000,
+					delay: 400,
+					event: 'hover',
+					auto: true,
+					mode: 'fade',
+					controller: $('#bannerCtrl'),
+					activeControllerCls: 'active'
+				});
+				$('#banner_tabs .flex-prev').click(function() {
+					bannerSlider.prev()
+				});
+				$('#banner_tabs .flex-next').click(function() {
+					bannerSlider.next()
+				});
+
+				//导航条动画
+				$('.nav-wrap li').hover(function() {
+					$('span', this).stop().css('height', '2px');
+					$('span', this).animate({
+						left: '0',
+						width: '100%',
+						right: '0'
+					}, 200);
+				}, function() {
+					$('span', this).stop().animate({
+						left: '50%',
+						width: '0'
+					}, 200);
+				});
+
+				//分类去掉最后一个border
+				$(".right .cate-cotent ul li:last").css("border", "0px");
+			})
+		</script>
+
+	</body>
+
+</html>

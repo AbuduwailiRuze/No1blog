@@ -1,0 +1,172 @@
+body {
+	background: #DDD;
+	color: #636262;
+	font: 300 18px/24px "calisto mt", sans-serif;
+}
+
+a {
+	color: inherit;
+	outline: 0 none;
+	text-decoration: none;
+	transition: all 0.5s ease 0s;
+}
+
+.w {
+	width: 1280px;
+	margin: 0 auto;
+	background: #FFF;
+}
+
+.w-wrap{
+	width: 1180px;
+	margin: 0 auto;
+}
+.super-line {
+	width: 100%;
+	border-top: 1px solid #E3E3E3;
+}
+
+#header {
+	height: 100px;
+	width: 100%;
+}
+
+#header .nav {
+	float: left;
+	width: 100%;
+	line-height: 45px;
+	height: 45px;
+	overflow: hidden;
+	margin-top: 40px;
+}
+
+#header .img-logo {
+	float: left;
+	width: 150px;
+	padding-left: 20px;
+	padding-right: 20px;
+	line-height: 45px;
+	height: 45px;
+	text-align: center;
+	overflow: hidden;
+}
+
+#header .nav-bar {
+	float: left;
+	line-height: 45px;
+	height: 45px;
+	position: relative;
+	
+}
+
+#header .nav-bar .nav-wrap {
+	position: absolute;
+	width: 400px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	text-align: center;
+	left: 10px;
+	
+}
+
+#header .nav-bar .nav-wrap ul {
+	list-style: none;
+}
+
+#header .nav-bar .nav-wrap ul li {
+	float: left;
+	position: relative;
+	margin: 0 10px;
+}
+
+#header .nav-bar .nav-wrap ul li span {
+	display: block;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	background: #1FAEFF;
+	top: 40px;
+	left: 0px;
+}
+
+#header .nav-bar .nav-wrap a {
+	width: auto;
+	text-align: center;
+	text-decoration: none;
+	font-family: "微软雅黑";
+	color: #000000;
+	font-weight: 400;
+	font-size: 16px;
+	padding-top: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/**
+			 * 结尾
+			 */
+
+#footer {
+	clear: both;
+	width: 100%;
+	background: url(../img/footer-bg.png) repeat;
+	height: 200px;
+	margin-top: 20px;
+	position: relative;
+	
+}
+
+#footer .visit-link {
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	width: 100%;
+	color: #FFF;
+}
+
+#footer .visit-link a {
+	display: inline-block;
+	padding: 10px 20px;
+	font-size: 14px;
+	color: #FFF;
+}
+
+#footer .visit-link a:hover {
+	color: #ee5908;
+}
+
+#footer .visit-link span {
+	color: #ee5908;
+	font-size: 14px;
+}
+
+#footer .end-info {
+	clear: both;
+	border-top: 1px solid #6D6D6D;
+	margin-top: 20px;
+	color: #FFF;
+	text-align: center;		
+}
+
+#footer .x {
+	float: left;
+	width: 382px;
+	height: 110px;
+	padding-left: 10px;
+}
+
+#footer p {
+	padding-top: 25px;
+	font-size: 12px;
+	text-align: center;
+	font-family: "微软雅黑";
+	text-align: center;
+	color: #BCBFBC;
+}
+
+
+		
+
